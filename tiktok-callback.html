@@ -1,0 +1,18 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>BD Yayin · TikTok bağlantısı</title><link rel="stylesheet" href="style.css">
+<style>#kod{font:16px/1.5 monospace;word-break:break-all;background:#1d1b1a;border:1px solid var(--line);padding:14px;margin:12px 0}button{font:inherit;padding:10px 18px;background:var(--red);color:#fff;border:0;cursor:pointer}</style>
+</head><body><main>
+<h1>BD Yayin · TikTok</h1><div class="bar"></div>
+<p id="msg">Bağlantı kodu okunuyor…</p>
+<div id="kod" hidden></div><button id="kopya" hidden>Kodu kopyala</button>
+<p class="mute">Bu sayfa kodu hiçbir yere göndermez; kod sadece bu tarayıcıda görünür ve birkaç dakika içinde geçersiz olur. This page does not send the code anywhere.</p>
+<script>
+const q=new URLSearchParams(location.search), m=document.getElementById('msg'), k=document.getElementById('kod'), b=document.getElementById('kopya');
+if(q.get('code')){const v=q.get('code')+' '+(q.get('state')||'');k.textContent=v;k.hidden=false;b.hidden=false;
+ m.textContent='Onay alındı. Aşağıdaki kodu kopyalayıp PowerShell penceresine yapıştırın.';
+ b.onclick=()=>{navigator.clipboard.writeText(v).then(()=>{b.textContent='Kopyalandı'})};}
+else if(q.get('error')){m.textContent='Onay alınamadı: '+q.get('error')+' '+(q.get('error_description')||'');}
+else{m.textContent='Bu sayfa TikTok bağlantısı sırasında kullanılır.';}
+history.replaceState(null,'',location.pathname);
+</script>
+</main></body></html>
