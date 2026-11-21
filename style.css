@@ -7,3 +7,4 @@ p,li{color:var(--fg)}small,.mute{color:var(--mute)}a{color:var(--fg);text-decora
 .bar{height:4px;width:56px;background:var(--red);margin:14px 0 28px}
 nav{margin:36px 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:.95rem}nav a{margin-right:18px}
 hr{border:0;border-top:1px solid var(--line);margin:40px 0}
+.yt a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:bold}.yt svg{flex:none}
